@@ -28,7 +28,7 @@ matrix:
       env: TOXENV=coq89-py36
 
 install:
-  - bash install-nix.sh
+  - bash ci/install-nix.sh
   - pip install tox
 
 script:
