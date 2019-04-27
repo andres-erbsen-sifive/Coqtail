@@ -1,0 +1,36 @@
+language: python
+
+matrix:
+  include:
+    - python: '2.7'
+      env: TOXENV=coq84-py27
+    - python: '2.7'
+      env: TOXENV=coq85-py27
+    - python: '2.7'
+      env: TOXENV=coq86-py27
+    - python: '2.7'
+      env: TOXENV=coq87-py27
+    - python: '2.7'
+      env: TOXENV=coq88-py27
+    - python: '2.7'
+      env: TOXENV=coq89-py27
+    - python: '3.6'
+      env: TOXENV=coq84-py36
+    - python: '3.6'
+      env: TOXENV=coq85-py36
+    - python: '3.6'
+      env: TOXENV=coq86-py36
+    - python: '3.6'
+      env: TOXENV=coq87-py36
+    - python: '3.6'
+      env: TOXENV=coq88-py36
+    - python: '3.6'
+      env: TOXENV=coq89-py36
+
+install:
+  - bash install-nix.sh
+  - pip install tox
+
+script:
+  - . /home/"${USER}"/.nix-profile/etc/profile.d/nix.sh
+  - tox
