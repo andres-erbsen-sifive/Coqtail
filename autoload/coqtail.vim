@@ -33,6 +33,7 @@ let s:python_dir = expand('<sfile>:p:h:h') . '/python'
 Py import sys, vim
 Py if not vim.eval('s:python_dir') in sys.path:
 \    sys.path.append(vim.eval('s:python_dir'))
+Py print(sys.path)
 Py from coqtail import Coqtail
 
 " Get the word under the cursor using the special '<cword>' variable. First
